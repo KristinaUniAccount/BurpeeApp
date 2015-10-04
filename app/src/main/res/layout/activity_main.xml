@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:id="@+id/layout"
+    android:background="@drawable/bg2"
+    android:minWidth="5dp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="193dp"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/titel1"
+                android:background="#00000000"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <ImageButton
+                    android:layout_width="156dp"
+                    android:layout_height="111dp"
+                    android:id="@+id/buttongruen"
+                    android:layout_gravity="center"
+                    android:src="@drawable/buttongruen"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:onClick="clickgruen"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <ImageButton
+                    android:layout_width="156dp"
+                    android:layout_height="111dp"
+                    android:id="@+id/buttongelb"
+                    android:layout_gravity="center"
+                    android:src="@drawable/buttongelb"
+                    android:padding="0dp"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:onClick="clickgelb" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <ImageButton
+                    android:layout_width="156dp"
+                    android:layout_height="111dp"
+                    android:id="@+id/buttonblau"
+                    android:layout_gravity="center"
+                    android:src="@drawable/buttonblau"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:onClick="clickblau"
+                    android:clickable="true" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <ImageButton
+                    android:layout_width="156dp"
+                    android:layout_height="111dp"
+                    android:id="@+id/buttonlila"
+                    android:layout_gravity="center"
+                    android:background="#00000000"
+                    android:src="@drawable/buttonlila"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:onClick="clicklila"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
