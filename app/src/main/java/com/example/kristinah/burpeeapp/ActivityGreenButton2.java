@@ -7,7 +7,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -20,13 +19,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 import static android.hardware.Sensor.TYPE_LINEAR_ACCELERATION;
 import static android.hardware.Sensor.TYPE_ORIENTATION;
@@ -42,10 +34,10 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
     SensorManager om;
     MediaPlayer player;
     MediaPlayer player2;
-    int wert;
-    int wert2;
-    int wertmax = 0;
-    int c = 0;
+    int grad;
+    int beschl;
+    int maxBeschl = 0;
+    int phase = 0;
     ImageButton buttonreset;
     ImageButton backtomenu1;
     EditText email;
@@ -61,22 +53,25 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_green_button2);
 
+        //Elemente des Layouts bestimmen
         gruenEinfuehrung = (TextView) findViewById(R.id.gruenEinfuehrung);
         buttonreset = (ImageButton) findViewById(R.id.buttonreset);
         backtomenu1 = (ImageButton) findViewById(R.id.backtomenu1);
         email = (EditText) findViewById(R.id.email);
 
+        //Sensoren bestimmen
         om=(SensorManager)getSystemService(SENSOR_SERVICE);
         orientation=om.getDefaultSensor(TYPE_ORIENTATION);
         om.registerListener(this, orientation, SensorManager.SENSOR_ORIENTATION);
-
         am = (SensorManager)getSystemService(SENSOR_SERVICE);
         acceleration = am.getDefaultSensor(TYPE_LINEAR_ACCELERATION);
         am.registerListener(this, acceleration, SensorManager.SENSOR_DELAY_NORMAL);
 
+        //Intent bestimmen
         Intent i = getIntent();
         emailAdr= i.getStringExtra("email");
 
+        //Actionbar soll nicht sichbar sein
         ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.hide();
     }
@@ -103,6 +98,7 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
         return super.onOptionsItemSelected(item);
     }
 
+    //Methode um Daten zu versenden
     public void senddata(View v){
             v.startAnimation(buttonClick);
             Log.i("Send email", "");
@@ -132,6 +128,8 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
                 Toast.makeText(ActivityGreenButton2.this,
                         "There is no email client installed.", Toast.LENGTH_SHORT).show();
             }
+
+            // Anschließend Werte zurück auf Ausgangswert setzen
             Text1 = "";
             Text2 = "";
             Text3 = "";
@@ -141,11 +139,12 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
 
 
 
+    // Methode, um Daten auf Ausgangswerte zurückzusetzen
     public void resetdata(View v){
         v.startAnimation(buttonClick);
         counter = 0;
-        wertmax = 0;
-        c = 0;
+        maxBeschl = 0;
+        phase = 0;
         gruenEinfuehrung.setText("Du hast die Daten zurück gesetzt. \nBeginne jetzt damit, Burpees zu machen!");
         Text1 = "";
         Text2 = "";
@@ -154,77 +153,103 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
     }
 
 
+    //Methode, um in das Startmenü zurückzukehren
     public void backtomenu1(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
     }
 
+    //Sensorabfrage
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType() == Sensor.TYPE_ORIENTATION){
 
-            wert= (int) (Math.sqrt((event.values[1])*(event.values[1])));
-            Text1 += wert;
+            grad= (int) (Math.sqrt((event.values[1])*(event.values[1])));
+
+            //Daten der Orientierung in "Text1" speichern
+            Text1 += grad;
             Text1 += ",";
 
         }
 
         if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION){
 
+            //Daten der Beschleunigung in "Text2" und "Text3" speichern
             Text2 += event.values[1];
             Text2 += ",";
 
             Text3 += event.values[2];
             Text3 += ",";
 
-            wert2= (int) (Math.sqrt((event.values[1])*(event.values[1])) + Math.sqrt((event.values[2])*(event.values[2])));
+            beschl= (int) (Math.sqrt((event.values[1])*(event.values[1])) + Math.sqrt((event.values[2])*(event.values[2])));
 
-            if (wert2 > wertmax){
-                wertmax = wert2;
+            //Maximale Beschleunigung der Summe der Y- und Z-Achse, die erreicht wurde, in maxBeschl speichern
+            if (beschl > maxBeschl){
+                maxBeschl = beschl;
             }
         }
 
 
-        if ((wert >= 120) && (c == 0)) {
-            c = 1;}
+        // Folgende Rechnung dient der Ermittlung eines Burpees, wenn das Handy mit
+        // korrekter Ausrichtung in der Hosentasche ist.
 
-        if ((wert <= 40) && (c ==1) ){
-            c = 2;
-            wertmax = 0;}
+        //Hocke:
+        if ((grad >= 120) && (phase == 0)) {
+            phase = 1;}
 
-        if((wert >= 110) && (c == 2)) {
-            c =3;
+        //Stütz:
+        if ((grad <= 40) && (phase ==1) ){
+            phase = 2;
+            maxBeschl = 0;}
+
+         //Hocke:
+        if((grad >= 110) && (phase == 2)) {
+            phase = 3;
             }
 
-        if ((wert<110) && (wert>70) && (c ==3) && (wertmax > 13)){
-            c =0;
-            wertmax = 0;
+        //Hocke:
+        if ((grad<110) && (grad>70) && (phase ==3) && (maxBeschl > 13)){
+
+            //Alle Werte zurücksetzen, Anzahl der Burpees anzeigen lassen,
+            //Bestätigungston abspielen
+            phase = 0;
+            maxBeschl = 0;
             counter += 1;
+
             gruenEinfuehrung.setText("Du hast \n " + counter + " \n Burpees gemacht!");
 
-            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.iphone);
+            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.ton1);
             player.start();
         }
 
+        // Folgende Rechnung dient der Ermittlung eines Burpees, wenn das Handy mit
+        // verkehrter Ausrichtung in der Hosentasche ist.
 
-        if ((wert <= 20) && (c == 0)) {
-            c = 4;}
 
-        if ((wert >=160) && (c ==4) ){
-            c = 5;
-            wertmax = 0;}
+        //Hocke:
+        if ((grad <= 20) && (phase == 0)) {
+            phase = 4;}
 
-        if((wert <=20) && (c == 5)) {
-            c =6;            }
+        //Stütz:
+        if ((grad >=160) && (phase ==4) ){
+            phase = 5;
+            maxBeschl = 0;}
 
-        if ((wert<110) && (wert>70) && (c ==6) && (wertmax > 13)){
-            c =0;
-            wertmax = 0;
+        //Hocke:
+        if((grad <=20) && (phase == 5)) {
+            phase = 6;            }
+
+        //Strecksprung:
+        if ((grad<110) && (grad>70) && (phase ==6) && (maxBeschl > 13)){
+
+            //Alle Werte zurücksetzen, Anzahl der Burpees anzeigen lassen,
+            //Bestätigungston abspielen
+            phase = 0;
+            maxBeschl = 0;
             counter += 1;
             gruenEinfuehrung.setText("Du hast \n " + counter + " \n Burpees gemacht!");
-
-            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.iphone);
+            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.ton1);
             player.start();
         }
 
