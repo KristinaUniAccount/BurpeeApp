@@ -1,10 +1,10 @@
 <resources xmlns:name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name">BurpeeApp</string>
+    <string name="app_name">Burpeeastic</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="text1">Das ist Text 1</string>
-    <string name="appTitel">Burpee Counter</string>
+    <string name="appTitel">Burpeeastic</string>
     <string name="title_activity_activity_yellow_buttin">ActivityYellowButtin</string>
     <string name="title_activity_activity_yellow_button">ActivityYellowButton</string>
     <string name="textgelb">Schritt1: \n\nNimm dein Handy und stecke es in deine vordere Hosentasche. </string>

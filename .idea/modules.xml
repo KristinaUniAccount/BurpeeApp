@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BurpeeApp.iml" filepath="$PROJECT_DIR$/BurpeeApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Burpeeastic.iml" filepath="$PROJECT_DIR$/Burpeeastic.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
