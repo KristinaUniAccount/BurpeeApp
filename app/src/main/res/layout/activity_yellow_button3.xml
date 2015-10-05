@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bggrey"
     tools:context="com.example.kristinah.burpeeapp.ActivityYellowButton3">
 
     <FrameLayout
@@ -13,11 +13,11 @@
         android:id="@+id/frameLayout">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="224dp"
+            android:layout_height="131dp"
             android:id="@+id/imageView2"
             android:layout_gravity="center"
-            android:src="@drawable/titelhowto"
+            android:src="@drawable/how"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
             android:padding="10dp" />
@@ -42,13 +42,13 @@
         android:layout_below="@+id/frameLayout">
 
         <TextView
-            android:layout_width="269dp"
-            android:layout_height="270dp"
+            android:layout_width="match_parent"
+            android:layout_height="318dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/textgelbHinweise"
             android:id="@+id/textView"
             android:layout_gravity="center"
-            android:textColor="#ff0d5ca0"
+            android:textColor="#ffcfefff"
             android:textStyle="bold"
             android:gravity="center_horizontal" />
 

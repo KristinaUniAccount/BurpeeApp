@@ -26,18 +26,18 @@ import static android.hardware.Sensor.TYPE_ORIENTATION;
 
 public class ActivityGreenButton2 extends ActionBarActivity implements SensorEventListener{
 
-    TextView gruenEinfuehrung;
-    int counter = 0;
+
     Sensor orientation;
     Sensor acceleration;
     SensorManager am;
     SensorManager om;
     MediaPlayer player;
-    MediaPlayer player2;
     int grad;
     int beschl;
     int maxBeschl = 0;
     int phase = 0;
+    int counter = 0;
+    TextView gruenEinfuehrung;
     ImageButton buttonreset;
     ImageButton backtomenu1;
     EditText email;
@@ -45,6 +45,7 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
     String Text1 = "";
     String Text2 = "";
     String Text3 = "";
+    //Animantion für ButtonClick
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
 
@@ -107,8 +108,6 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse("mailto:"));
             emailIntent.setType("text/plain");
-
-
 
             emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Burpee Data");

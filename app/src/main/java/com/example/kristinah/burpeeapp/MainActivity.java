@@ -38,23 +38,27 @@ public class MainActivity extends ActionBarActivity{
 
     }
 
+    //Button HowTo
     public void clickgelb(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityYellowButton.class));
 
     }
 
+    //Button start
     public void clickgruen(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityGreenButton.class));
     }
 
+    //Button about
     public void clickblau(View v)
     {
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityBlueButton.class));
     }
 
+    //Button info
     public void clicklila(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityLilaButton.class));

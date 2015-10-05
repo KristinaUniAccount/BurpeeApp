@@ -22,6 +22,7 @@ public class ActivityYellowButton2 extends ActionBarActivity {
     ImageButton next2;
     ImageButton back2;
     ImageButton backtomenu2;
+    VideoView video;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
 
@@ -31,28 +32,38 @@ public class ActivityYellowButton2 extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yellow_button2);
+        MediaController vidControl = new MediaController(this);
+        vidControl.setAnchorView(video);
 
         ImageButton next2 = (ImageButton) findViewById(R.id.next2);
         ImageButton back2 = (ImageButton) findViewById(R.id.back2);
         ImageButton backtomenu2 = (ImageButton) findViewById(R.id.backtomenu2);
 
+        //Video und Mediacontroler zuweisen
+        VideoView video = (VideoView) findViewById(R.id.video);
+        video.setMediaController(vidControl);
+        String urlpath = "android.resource://" + getPackageName() + "/" + R.raw.film;
+        video.setVideoURI(Uri.parse(urlpath));
+        video.start();
+
         ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.hide();
-
-
     }
 
 
+    //Button zum nächsten View
     public void next2(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityYellowButton3.class));
     }
 
+    //Butten zum vorherigen View
     public void back2(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityYellowButton.class));
     }
 
+    //Button zum Hauptmenü
     public void backtomenu2(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -79,4 +90,6 @@ public class ActivityYellowButton2 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

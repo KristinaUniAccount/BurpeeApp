@@ -30,11 +30,13 @@ public class ActivityYellowButton extends ActionBarActivity {
         supportActionBar.hide();
     }
 
+    //Button zum nächsten Schritt
     public void next1(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), ActivityYellowButton2.class));
     }
 
+    //Button zurück zum Menü
     public void backtomenu1(View v){
         v.startAnimation(buttonClick);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));

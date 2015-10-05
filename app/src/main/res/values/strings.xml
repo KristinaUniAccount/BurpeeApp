@@ -7,15 +7,13 @@
     <string name="appTitel">Burpee Counter</string>
     <string name="title_activity_activity_yellow_buttin">ActivityYellowButtin</string>
     <string name="title_activity_activity_yellow_button">ActivityYellowButton</string>
-    <string name="textgelb">Nimm dein Handy und stecke es so in deine vordere Hosentasche, wie du es
-        betrachtest, also mit dem Display zu deinem Körper zeigend.\n Das folgende Video
-        zeigt dir, wie es funktioniert...</string>
+    <string name="textgelb">Schritt1: \n\nNimm dein Handy und stecke es in deine vordere Hosentasche. </string>
     <string name="oneofthree">1 / 3</string>
     <string name="twoofthree">2 / 3</string>
     <string name="threeofthree">3 / 3</string>
     <string name="title_activity_activity_yellow_button2">ActivityYellowButton2</string>
     <string name="textgelbAusführung">Führe einen korrekten Burpee aus: (VIDEO) </string>
-    <string name="textgelbHinweise">Wenn du einen korrekten Burpee ausgeführt hast, hörst du einen Bestätigungston. Du kannst anschließend direkt weitermachen. </string>
+    <string name="textgelbHinweise">Schritt 3:\n\nWenn du einen korrekten Burpee ausgeführt hast, hörst du einen Bestätigungston. Du kannst anschließend direkt weitermachen. \n\nViel Spaß!</string>
     <string name="title_activity_activity_yellow_button3">ActivityYellowButton3</string>
     <string name="title_activity_activity_green_button">ActivityGreenButton</string>
     <string name="title_activity_acitvity_blue_button">AcitvityBlueButton</string>
@@ -28,4 +26,5 @@
     <string name="textlila">Icons made by Freepik from www.flaticon.com \n\n Universität Heidelberg \n http://www.uni-heidelberg.de/ \n\n Robotiklabor \n http://joanna.iwr.uni-heidelberg.de/rlab/de/home</string>
     <string name="title_activity_activity_green_button2">ActivityGreenButton2</string>
     <string name="textgruen">Steck dein Handy in die Tasche und fang an!</string>
+    <string name="schritt2">Schritt 2:\n Führe einen Burpee aus!</string>
 </resources>
