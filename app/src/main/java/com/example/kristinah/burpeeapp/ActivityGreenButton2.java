@@ -248,7 +248,7 @@ public class ActivityGreenButton2 extends ActionBarActivity implements SensorEve
             maxBeschl = 0;
             counter += 1;
             gruenEinfuehrung.setText("Du hast \n " + counter + " \n Burpees gemacht!");
-            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.ton1);
+            player= MediaPlayer.create(ActivityGreenButton2.this, R.raw.pling);
             player.start();
         }
 
