@@ -17,39 +17,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityYellowButton"
+            android:name=".ActivityHowto"
             android:label="@string/title_activity_activity_yellow_button" >
         </activity>
         <activity
-            android:name=".ActivityYellowButton2"
+            android:name=".ActivityHowto2"
             android:label="@string/title_activity_activity_yellow_button2"
-            android:parentActivityName=".ActivityYellowButton" >
+            android:parentActivityName=".ActivityHowto" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.kristinah.burpeeapp.ActivityYellowButton" />
+                android:value=".ActivityHowto" />
         </activity>
         <activity
-            android:name=".ActivityYellowButton3"
+            android:name=".ActivityHowto3"
             android:label="@string/title_activity_activity_yellow_button3"
-            android:parentActivityName=".ActivityYellowButton2" >
+            android:parentActivityName=".ActivityHowto2" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.kristinah.burpeeapp.ActivityYellowButton2" />
+                android:value=".ActivityHowto2" />
         </activity>
         <activity
-            android:name=".ActivityGreenButton"
+            android:name=".ActivityCounter"
             android:label="@string/title_activity_activity_green_button" >
         </activity>
         <activity
-            android:name=".ActivityBlueButton"
+            android:name=".ActivityAboutus"
             android:label="@string/title_activity_activity_blue_button" >
         </activity>
         <activity
-            android:name=".ActivityLilaButton"
+            android:name=".ActivityInfo"
             android:label="@string/title_activity_activity_lila_button" >
         </activity>
         <activity
-            android:name=".ActivityGreenButton2"
+            android:name=".ActivityCounter2"
             android:label="@string/title_activity_activity_green_button2" >
         </activity>
     </application>

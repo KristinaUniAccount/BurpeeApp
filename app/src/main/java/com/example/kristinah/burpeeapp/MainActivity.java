@@ -1,6 +1,5 @@
 package com.example.kristinah.burpeeapp;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -9,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -41,27 +39,27 @@ public class MainActivity extends ActionBarActivity{
     //Button HowTo
     public void clickgelb(View v){
         v.startAnimation(buttonClick);
-        startActivity(new Intent(getApplicationContext(), ActivityYellowButton.class));
+        startActivity(new Intent(getApplicationContext(), ActivityHowto.class));
 
     }
 
     //Button start
     public void clickgruen(View v){
         v.startAnimation(buttonClick);
-        startActivity(new Intent(getApplicationContext(), ActivityGreenButton.class));
+        startActivity(new Intent(getApplicationContext(), ActivityCounter.class));
     }
 
     //Button about
     public void clickblau(View v)
     {
         v.startAnimation(buttonClick);
-        startActivity(new Intent(getApplicationContext(), ActivityBlueButton.class));
+        startActivity(new Intent(getApplicationContext(), ActivityAboutus.class));
     }
 
     //Button info
     public void clicklila(View v){
         v.startAnimation(buttonClick);
-        startActivity(new Intent(getApplicationContext(), ActivityLilaButton.class));
+        startActivity(new Intent(getApplicationContext(), ActivityInfo.class));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
