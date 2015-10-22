@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bggrey"
+    tools:context="com.example.kristinah.burpeeapp.ActivityCounter">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:id="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="224dp"
+            android:layout_height="131dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/counter"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:id="@+id/backtomenu1"
+            android:layout_gravity="left|top"
+            android:src="@drawable/backtomenu"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:clickable="true"
+            android:onClick="backtomenu1"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/frameLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="232dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/gruen1"
+            android:id="@+id/gruen1"
+            android:layout_gravity="center_horizontal|top"
+            android:textStyle="bold"
+            android:textColor="#ffcfefff"
+            android:gravity="center"
+            android:padding="10dp" />
+
+        <FrameLayout
+            android:layout_width="301dp"
+            android:layout_height="229dp"
+            android:layout_gravity="center_horizontal|bottom">
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:id="@+id/goToCounter"
+                android:layout_gravity="right|bottom"
+                android:src="@drawable/button13"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:onClick="goToCounter"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/email"
+                android:layout_gravity="center"
+                android:hint="Email"
+                android:textColorHint="#ff686b6b"
+                android:textColor="#ff0d5ca0" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

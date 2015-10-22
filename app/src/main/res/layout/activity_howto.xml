@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.kristinah.burpeeapp.ActivityHowto"
+    android:background="@drawable/bggrey">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:id="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="224dp"
+            android:layout_height="131dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/how"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:id="@+id/backtomenu1"
+            android:layout_gravity="left|top"
+            android:src="@drawable/backtomenu"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:clickable="true"
+            android:onClick="backtomenu1"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/frameLayout">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="173dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/textgelb"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textColor="#ffcfefff"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/oneofthree"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColor="#ff000000"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="137dp"
+            android:layout_height="65dp"
+            android:layout_gravity="right|bottom"
+            android:weightSum="1">
+
+            <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="35dp"
+                android:id="@+id/next1"
+                android:src="@drawable/next"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:clickable="true"
+                android:onClick="next1"/>
+        </LinearLayout>
+
+    </FrameLayout>
+</RelativeLayout>

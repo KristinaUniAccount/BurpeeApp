@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bggrey"
+    tools:context="com.example.kristinah.burpeeapp.ActivityInfo">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:id="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="268dp"
+            android:layout_height="156dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/information"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:id="@+id/backtomenu1"
+            android:layout_gravity="left|top"
+            android:src="@drawable/backtomenu"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:clickable="true"
+            android:onClick="backtomenu1"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/frameLayout">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/textlila"
+            android:id="@+id/textlila"
+            android:layout_gravity="center"
+            android:textColor="#ffcfefff"
+            android:textSize="20sp"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:autoLink="all"/>
+
+    </FrameLayout>
+
+</RelativeLayout>
